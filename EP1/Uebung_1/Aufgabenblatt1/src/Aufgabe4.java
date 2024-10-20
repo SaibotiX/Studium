@@ -13,7 +13,7 @@ public class Aufgabe4 {
         int pixelHeight = 500;
         CodeDraw myDrawObj = new CodeDraw(pixelWidth, pixelHeight);
 
-        int numLinesQuadrant = 25;
+        int numLinesQuadrant = 30;
 
         myDrawObj.setCanvasPositionX(600);
         myDrawObj.setCanvasPositionX(100);

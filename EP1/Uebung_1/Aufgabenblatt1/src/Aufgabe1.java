@@ -46,13 +46,24 @@ public class Aufgabe1 {
 	}
 	System.out.println();
 
-	String countZ = "Zehn zahme Ziegen zogen ziemlich zügig zehn Zentner Zucker zum Zoo!";
-	int wordCount = 11;
-	int zCount = 0;
+//	String countZ = "Zehn zahme Ziegen zogen ziemlich zügig zehn Zentner Zucker zum Zoo!";
+//	int wordCount = 11;
+//	int zCount = 0;
+//
+//	for(int i = 0; i < wordCount; i = i + 1){
+//	    zCount = zCount + 1;
+//	}
+//	System.out.println(zCount);
 
-	for(int i = 0; i < wordCount; i = i + 1){
-	    zCount = zCount + 1;
+	String sentenceZ = "Zehn zahme Ziegen zogen ziemlich zügig zehn Zentner Zucker zum Zoo!";
+	int stringLength = sentenceZ.length();
+	int countZ = 0;
+	
+	for(int i = 0; i < stringLength; i = i + 1){
+	    if(sentenceZ.charAt(i) == 'z' || sentenceZ.charAt(i) == 'Z'){
+		countZ = countZ + 1;
+	    }
 	}
-	System.out.println(zCount);
+	System.out.println(countZ);
     }
 }
