@@ -70,7 +70,7 @@ public class Aufgabe1 {
 
     /*
       Zusatzfragen: 
-      1) Byte, Int, Long
+      1) Byte, Int, Long, short
       2) Man muss ein neues Array anlegen mit der gewünschten größe und dann die Werte des Alten Arrays in das neue Array kopieren.
       3) Das kann mittels for Schleife geschehen oder man ruft die Array methode .clone() auf welche dann in das neue Int Array die werte des originalen arrays mit einer neuen Referenz speichert
       4)Nein, es ist nicht sinvoll Arrays mit == zu Vergleichen, da man nur Ihre Referenzen, also den Speicherplatz vergleicht, auf welchen die Arrays hinzeigen. Höchstens man möchte diesen Speicherplatz vergleichen hat es keinen nutzen.

@@ -3,11 +3,38 @@
 */
 
 import java.util.Arrays;
-
+import java.lang.Math;
 public class Aufgabe3 {
 
-    private static void replaceValues(int[] workArray) {
+    public static int[] replaceValues(int[] workArray) {
+	int maxValue = workArray[0];
+	int minValue = workArray[0];
+	
+	for(int i = 0; i < workArray.length; i = i + 1){
+	    if(workArray[i] < minValue){
+		minValue = workArray[i];
+	    }
+	    if(workArray[i] > maxValue){
+		maxValue = workArray[i];
+	    }
+
+	}
+
+	int subMaxValue;
+	int subMinValue;
+	for(int i = 0; i < workArray.length; i = i + 1){
+	    subMaxValue = Math.abs(workArray[i] - maxValue);
+	    subMinValue = Math.abs(workArray[i] - minValue);
+
+	    if(subMaxValue < subMinValue){
+		workArray[i] = maxValue;
+	    }
+	    else if(subMinValue <= subMaxValue){
+		workArray[i] = minValue;
+	    }
+	}
         //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
+	return workArray;
     }
 
     public static void main(String[] args) {

@@ -6,9 +6,25 @@ import java.util.Arrays;
 
 public class Aufgabe5 {
 
-    private static int[][] generateExtendedArray(int[] inputArray) {
+    public static int[][] generateExtendedArray(int[] inputArray) {
+	int firstRow = inputArray[0];
+	int lastRow = inputArray[1];
+	int fillWithInt = inputArray[2];
+
+	int[][] resultArray = new int[lastRow - firstRow + 1][];
+
+	for(int i = firstRow, j = 0; i <= lastRow; i = i + 1, j = j + 1){
+	    resultArray[j] = new int[i];
+
+	    for(int k = 0; k < resultArray[j].length; k = k + 1){
+		resultArray[j][k] = fillWithInt;
+		fillWithInt = fillWithInt + 1;
+	    }
+	}
+
+
         // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+        return resultArray; //Zeile kann geändert oder entfernt werden.
     }
 
     //Vorgegebene Methode - BITTE NICHT VERÄNDERN!

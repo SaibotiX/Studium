@@ -6,9 +6,38 @@ import java.util.Arrays;
 
 public class Aufgabe6 {
 
-    private static int[][] generateReformattedArray(int[][] inputArray) {
+    public static int[][] generateReformattedArray(int[][] inputArray) {
+	int entryCount = 0;
+	int[][] resultArray = new int[inputArray.length][];
+
+	int resultArrayLength = 0;
+
+	//New length of Array
+	for(int i = 0; i < inputArray.length; i = i + 1){
+	    for(int j = 0; j < inputArray[i].length; j = j + 1){
+		if(inputArray[i][j] != 0 && j % 2 == 0){
+		    resultArrayLength = resultArrayLength + inputArray[i][j];
+		}
+	    }
+
+	    resultArray[i] = new int[resultArrayLength];
+	    resultArrayLength = 0;
+	}
+
+	for(int i = 0; i < inputArray.length; i = i + 1){
+	    for(int j = 0; j < inputArray[i].length; j = j + 1){
+		if(inputArray[i][j] != 0 && j % 2 == 0){
+		    int nTimes = inputArray[i][j];
+		    for(int k = 0; k < nTimes; k = k + 1){
+			resultArray[i][entryCount] = inputArray[i][j + 1];
+			entryCount = entryCount + 1;
+		    }
+		}
+	    }
+	    entryCount = 0;
+	}
         // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+        return resultArray; //Zeile kann geändert oder entfernt werden.
     }
 
     //Vorgegebene Methode - BITTE NICHT VERÄNDERN!

@@ -6,9 +6,54 @@ import java.util.Arrays;
 
 public class Aufgabe4 {
 
-    private static int[][] generateFilled2DArray(int n) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+    public static int[][] generateFilled2DArray(int n) {
+	
+	int[][] fillArray = new int[n][n];
+
+	if(n >= 3){
+	    for(int i = 0; i < n; i = i + 1){
+		int currCount = 2;
+		for(int j = 0; j < n; j = j + 1){
+
+		    int currI = i;
+		    int currJ = j;
+
+		    //Draw the -1
+		    if(i / 2 - 1 == n / 2 - 1 && j / 2 - 1 == n / 2 - 1){
+			for(int k = 0; k < 5; k = k + 1){
+			    for(int l = 0; l < 5; l = l + 1){
+				fillArray[currI / 2 - 1][currJ / 2 - 1] = - 1;
+				currJ = currJ + 1;
+			    }
+			    currJ = currJ - 5;
+			    currI = currI + 1;
+			}
+		    }
+		    else{ //Draw Numbers
+			if(i >= j){
+			    fillArray[i][j] = i + 1 - j;
+			}
+			else{
+			    fillArray[i][j] = currCount;
+			    currCount = currCount + 1;
+			}
+		    }
+					    
+		    //Draw the middle Point + the last Array Entry
+		    if(i / 2 == n / 2 && j / 2 == n / 2){
+			fillArray[i / 2][n / 2] = 1;
+			if(n != 3){
+			    fillArray[i][j] = 1;
+			}
+
+		    }
+		}
+	    }
+	}
+	else{
+	    fillArray[0][0] = 1;
+	}
+        return fillArray; //Zeile kann geändert oder entfernt werden.
     }
 
     //Vorgegebene Methode - BITTE NICHT VERÄNDERN!
