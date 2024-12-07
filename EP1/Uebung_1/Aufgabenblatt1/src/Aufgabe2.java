@@ -82,7 +82,7 @@ public class Aufgabe2 {
 	}
 	System.out.println();
 
-
+	//Aufgabe b)
 	running = true;
 	iteration = 0;
 	char lowCharBeginning = 'k';
@@ -107,6 +107,7 @@ public class Aufgabe2 {
 	}
 	System.out.println(newText);
 
+	//Aufgabe c)
 	int startInt = 35;
 	boolean insertWhiteSpace = false;
 	while(startInt < 175){
