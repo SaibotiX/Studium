@@ -1,85 +1,59 @@
 /*
-  Aufgabe 1) Zweidimensionale Arrays
+    Aufgabe 1) Zweidimensionale Arrays
 */
 
 import java.util.Arrays;
 
 public class Aufgabe1 {
-    
-    public static void shiftLines(int[][] workArray) {
-	int currentLine = 0;
-	int switchWith = 0;
 
-	int arrLength = workArray.length;
-	int currSmallest = workArray[0].length;
+    private static void shiftLines(int[][] workArray) {
+        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
+        int currentLine = 0;
+        int switchWith = 0;
 
-	boolean allSameLength = true;
-	
-	for(int i = 0; i < arrLength; i = i + 1){
-	    if(workArray[i].length < currSmallest){
-		currSmallest = workArray[i].length;
-		switchWith = i;
-	    }
+        int arrLength = workArray.length;
+        int currSmallest = workArray[0].length;
 
-	    if(i < arrLength - 1){
-		if(workArray[i].length != workArray[i + 1].length){
-		    allSameLength = false;
-		}
-	    }
-	}
+        boolean allSameLength = true;
 
-	if(!allSameLength){
-	    int[] arrTemp = workArray[currentLine];
+        for (int i = 0; i < arrLength; i = i + 1) {
+            if (workArray[i].length < currSmallest) {
+                currSmallest = workArray[i].length;
+                switchWith = i;
+            }
 
-	    workArray[currentLine] = new int[currSmallest];
-	    workArray[currentLine] = workArray[switchWith];
-	    workArray[switchWith] = arrTemp;
-	    currentLine = currentLine + 1;
-	}
-	else{
-	    int[] tmp = new int[workArray[0].length];
-	    tmp = workArray[0];
-	    
-	    for(int i = 0; i < arrLength - 1; i = i + 1){
-		workArray[i] = workArray[i + 1];
-	    }
+            if (i < arrLength - 1) {
+                if (workArray[i].length != workArray[i + 1].length) {
+                    allSameLength = false;
+                }
+            }
+        }
 
-	    workArray[arrLength - 1] = tmp;
-	}
-    
-//	int smallerThen = workArray[currentLine].length;
-//	boolean switched = false;
-//	
-//	for(int i = 0; i < arrLength - 1; i = i + 1){
-//	    for(int j = currentLine; j < arrLength; j = j + 1){
-//		if(workArray[j].length > currSmallest && workArray[j].length < smallerThen){
-//		    currSmallest = workArray[j].length;
-//		    switchWith = j;
-//		    switched = true;
-//		}
-//	    }
-//	    if(switched){
-//		workArray[currentLine] = new int[currSmallest];
-//		workArray[currentLine] = workArray[switchWith];
-//		workArray[switchWith] = arrTemp;
-//		currentLine = currentLine + 1;
-//
-//		if(currentLine < arrLength){
-//		    smallerThen = workArray[currentLine].length;
-//		}
-//
-//		switched = false;
-//	    }
-//	}
+        if (!allSameLength) {
+            int[] arrTemp = workArray[currentLine];
+
+            workArray[currentLine] = new int[currSmallest];
+            workArray[currentLine] = workArray[switchWith];
+            workArray[switchWith] = arrTemp;
+            currentLine = currentLine + 1;
+        } else {
+            int[] tmp = new int[workArray[0].length];
+            tmp = workArray[0];
+
+            for (int i = 0; i < arrLength - 1; i = i + 1) {
+                workArray[i] = workArray[i + 1];
+            }
+
+            workArray[arrLength - 1] = tmp;
+        }
     }
-
 
     //Vorgegebene Methode - BITTE NICHT VERÄNDERN!
     private static void printArray(int[][] inputArray) {
         if (inputArray != null) {
             for (int i = 0; i < inputArray.length; i++) {
                 for (int j
-			 = 0; j < inputArray[i].length; j++) {
+                     = 0; j < inputArray[i].length; j++) {
                     System.out.print(inputArray[i][j] + "\t");
                 }
                 System.out.println();

@@ -37,52 +37,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Aufgabe1.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe2 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe3.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe4 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe4 (2).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe4 (3).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe4 (4).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe4 (5).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe4 (6).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe4.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe5 (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe5 (2).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe5 (3).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe5 (4).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe5.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe6.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Aufgabe7.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/zuckram/Studium/EP1/Uebung_4/Aufgabenblatt3&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Aufgabe1.executor": "Run",
+    "Application.Aufgabe2 (1).executor": "Run",
+    "Application.Aufgabe3.executor": "Run",
+    "Application.Aufgabe4 (1).executor": "Run",
+    "Application.Aufgabe4 (2).executor": "Run",
+    "Application.Aufgabe4 (3).executor": "Run",
+    "Application.Aufgabe4 (4).executor": "Run",
+    "Application.Aufgabe4 (5).executor": "Run",
+    "Application.Aufgabe4 (6).executor": "Run",
+    "Application.Aufgabe4.executor": "Run",
+    "Application.Aufgabe5 (1).executor": "Run",
+    "Application.Aufgabe5 (2).executor": "Run",
+    "Application.Aufgabe5 (3).executor": "Run",
+    "Application.Aufgabe5 (4).executor": "Run",
+    "Application.Aufgabe5.executor": "Run",
+    "Application.Aufgabe6.executor": "Run",
+    "Application.Aufgabe7.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/zuckram/Studium/EP1/Uebung_4/FreshAufgabe4",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Aufgabe1">
     <configuration name="Aufgabe2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Aufgabe2" />
       <module name="Aufgabenblatt3" />
@@ -131,6 +131,7 @@
       <workItem from="1731677412103" duration="392000" />
       <workItem from="1731705174116" duration="2498000" />
       <workItem from="1731743835910" duration="3794000" />
+      <workItem from="1731850845836" duration="36000" />
     </task>
     <servers />
   </component>

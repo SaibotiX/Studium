@@ -155,7 +155,7 @@ public class Aufgabe5 {
 		if(identifier == 2){
 		    try{
 			int leverage = Math.abs(Integer.parseInt(userInput));
-			if(identifier == 2 && (leverage == 0 || leverage > 4)){
+			if(identifier == 2 && (leverage == 0 || leverage >= 4)){
 			    System.out.println("We only allow the specified range ");
 			    System.out.print("Please try again: ");
 			    userInput = input.nextLine();
@@ -190,4 +190,3 @@ public class Aufgabe5 {
 	return userInput;
     }
 }
-

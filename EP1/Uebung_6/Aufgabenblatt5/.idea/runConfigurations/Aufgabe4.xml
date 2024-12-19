@@ -2,7 +2,7 @@
   <configuration default="false" name="Aufgabe4" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="Aufgabe4" />
     <module name="Aufgabenblatt5" />
-    <option name="VM_PARAMETERS" value="-Xss16m" />
+    <option name="VM_PARAMETERS" value="-Xss32m" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

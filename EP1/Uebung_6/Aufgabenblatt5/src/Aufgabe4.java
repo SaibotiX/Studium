@@ -11,21 +11,22 @@ public class Aufgabe4 {
     private static final int squareSize = 50;
 
     private static void floodFill(CodeDraw myDrawObj, int[][] picArray, int sy, int sx) {
-	if(picArray[sy][sx] == 1 || sy == 0 || sy == picArray.length - 1|| sx == 0 || sx == picArray[0].length - 1){
-	    if(sy == 0 || sy == picArray.length - 1|| sx == 0 || sx == picArray[0].length - 1){
-	    myDrawObj.setPixel(sx,sy,myDrawObj.getColor());
-	    }
-	}
-	else{
-	    picArray[sy][sx] = 1;
-		    
-	    floodFill(myDrawObj, picArray, sy + 1, sx);
-	    floodFill(myDrawObj, picArray, sy, sx + 1);
-	    floodFill(myDrawObj, picArray, sy - 1, sx);
-	    floodFill(myDrawObj, picArray, sy, sx - 1);
-	    
-	    myDrawObj.setPixel(sx,sy,myDrawObj.getColor());
-	}
+        if (picArray[sy][sx] == 1 || sy == 0 || sy == picArray.length - 1 || sx == 0 || sx == picArray[0].length - 1) {
+            if (sy == 0 || sy == picArray.length - 1 || sx == 0 || sx == picArray[0].length - 1) {
+                myDrawObj.setPixel(sx, sy, myDrawObj.getColor());
+            }
+
+        } else {
+            picArray[sy][sx] = 1;
+
+            floodFill(myDrawObj, picArray, sy + 1, sx);
+            floodFill(myDrawObj, picArray, sy, sx + 1);
+            floodFill(myDrawObj, picArray, sy - 1, sx);
+            floodFill(myDrawObj, picArray, sy, sx - 1);
+
+            myDrawObj.setPixel(sx, sy, myDrawObj.getColor());
+
+        }
     }
 
 
@@ -114,7 +115,7 @@ public class Aufgabe4 {
                 }
                 //Button BLUE
 
-		else if (mouseY >= buttonCounter++ * squareSize && mouseY < buttonCounter * (squareSize - 1) && mouseX >= width - squareSize && mouseX < width - 1) {
+                else if (mouseY >= buttonCounter++ * squareSize && mouseY < buttonCounter * (squareSize - 1) && mouseX >= width - squareSize && mouseX < width - 1) {
                     myDrawObj.setColor(Palette.BLUE);
                     colorChosen = true;
                 }
@@ -123,7 +124,7 @@ public class Aufgabe4 {
                 //**********************************************
 
                 //Button YELLOW
-		else if (mouseY >= buttonCounter++ * squareSize && mouseY < buttonCounter * (squareSize - 1) && mouseX >= width - squareSize && mouseX < width - 1) {
+                else if (mouseY >= buttonCounter++ * squareSize && mouseY < buttonCounter * (squareSize - 1) && mouseX >= width - squareSize && mouseX < width - 1) {
                     myDrawObj.setColor(Palette.YELLOW);
                     colorChosen = true;
                 }
@@ -132,68 +133,63 @@ public class Aufgabe4 {
                 //**********************************************
 
                 //Button CYAN
-		else if (mouseY >= buttonCounter++ * squareSize && mouseY < buttonCounter * (squareSize - 1) && mouseX >= width - squareSize && mouseX < width - 1) {
+                else if (mouseY >= buttonCounter++ * squareSize && mouseY < buttonCounter * (squareSize - 1) && mouseX >= width - squareSize && mouseX < width - 1) {
                     myDrawObj.setColor(Palette.CYAN);
                     colorChosen = true;
                 }
                 //**********************************************
                 //TODO: Implementieren Sie hier Ihre Lösung für den Klick auf die cyanfarbene Fläche
                 //**********************************************
-		if (colorChosen) {
+                if (colorChosen) {
 
-		    boolean running = true;
-		    while(running){
-			if (myEventSC.hasMouseClickEvent()) {
-			    currentClick = myEventSC.nextMouseClickEvent();
+                    boolean running = true;
+                    while (running) {
+                        if (myEventSC.hasMouseClickEvent()) {
+                            currentClick = myEventSC.nextMouseClickEvent();
 
-			    mouseY = currentClick.getY();
-			    mouseX = currentClick.getX();
+                            mouseY = currentClick.getY();
+                            mouseX = currentClick.getX();
 
-			    if(mouseX < 250 && mouseY < 250){
-				floodFill(myDrawObj, picArray, mouseY, mouseX);
-			    }
-			    else{
-				System.out.println("Please choose a valid Point!");
-			    }
-			    
-			    myDrawObj.show();
-			    
-			    running = false;
-			    
-			}
-			else{
-			    myEventSC.nextEvent();
-			}
-		    }
+                            if (mouseX < 250 && mouseY < 250) {
+                                floodFill(myDrawObj, picArray, mouseY, mouseX);
+                            } else {
+                                System.out.println("Please choose a valid Point!");
+                            }
 
-		    colorChosen = false;
+                            myDrawObj.show();
 
-		    //**********************************************
-		    //TODO: Ergänzen Sie den fehlenden Code (Zustand: Fläche füllen)
-		    //**********************************************
-	    } else {
-		    myDrawObj.setLineWidth(2);
-		    myDrawObj.setColor(Palette.BLACK);
-		    
-		    yClick[0] = yClick[1];
-		    xClick[0] = xClick[1];
-		    yClick[1] = mouseY;
-		    xClick[1] = mouseX;
+                            running = false;
 
-		    if(yClick[1] < 250 && xClick[1] < 250 && yClick[0] < 250 && xClick[0] < 250){
-			paintLine(myDrawObj, picArray, yClick, xClick);
-		    }
-		    else{
-			System.out.println("Please choose a valid Point!");
-		    }
-		    myDrawObj.setLineWidth(1);
-		    myDrawObj.show();
-		}
+                        } else {
+                            myEventSC.nextEvent();
+                        }
+                    }
+
+                    colorChosen = false;
+
+                    //**********************************************
+                    //TODO: Ergänzen Sie den fehlenden Code (Zustand: Fläche füllen)
+                    //**********************************************
+                } else {
+                    myDrawObj.setLineWidth(2);
+                    myDrawObj.setColor(Palette.BLACK);
+
+                    yClick[0] = yClick[1];
+                    xClick[0] = xClick[1];
+                    yClick[1] = mouseY;
+                    xClick[1] = mouseX;
+
+                    if (yClick[1] < 250 && xClick[1] < 250 && yClick[0] < 250 && xClick[0] < 250) {
+                        paintLine(myDrawObj, picArray, yClick, xClick);
+                    } else {
+                        System.out.println("Please choose a valid Point!");
+                    }
+                    myDrawObj.setLineWidth(2);
+                    myDrawObj.show();
+                }
             } else {
                 myEventSC.nextEvent();
             }
         }
     }
 }
-
-
