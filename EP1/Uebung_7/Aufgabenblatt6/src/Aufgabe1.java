@@ -18,7 +18,7 @@ public class Aufgabe1 {
 	    {' ', ' ', ' '}
         };
 
-        boolean twoPlayer = false; //true ... human vs. human, false ... human vs. computer
+        boolean twoPlayer = true; //true ... human vs. human, false ... human vs. computer
         boolean player = true; //(1Player) human = true, computer = false, (2Player) human1 = true, human2 = false
         int maxDepth = 8;
         boolean gameRunning = true;
@@ -71,13 +71,8 @@ public class Aufgabe1 {
 		gameBoard[drawInGameBoardY][drawInGameBoardX] = currChar;
 		drawGameBoard(myDrawObj, gameBoard);
 
-		if(checkIfFull(gameBoard)){
-		    gameRunning = false;
-		    System.out.println("hähÄ");
-		    continue;
-		}
-		if(checkIfWinner(gameBoard, player)){
-		    System.out.println("hähÄ");
+		if(checkIfFull(gameBoard) || checkIfWinner(gameBoard, player)){
+		    System.out.println("Player " + currChar + " won!!");
 		    gameRunning = false;
 		    continue;
 		}
@@ -93,14 +88,8 @@ public class Aufgabe1 {
 		    gameBoard[result[0]][result[1]] = 'O';
 		    drawGameBoard(myDrawObj, gameBoard);
 		
-		    if(checkIfFull(gameBoard)){
-			gameRunning = false;
-			System.out.println("hähÄ");
-			continue;
-					
-		    }
-		    if(checkIfWinner(gameBoard, !player)){
-			System.out.println("hähÄ");
+		    if(checkIfFull(gameBoard) || checkIfWinner(gameBoard, !player)){
+			System.out.println("The computer won!!");
 			gameRunning = false;
 			continue;
 					
@@ -189,7 +178,6 @@ public class Aufgabe1 {
 	}
 
 	if(count == gameBoard.length * 3){
-	    System.out.println("FULL");
 	    result = true;
 	}
 	
@@ -199,7 +187,6 @@ public class Aufgabe1 {
 
     public static boolean checkIfWinner(char[][] gameBoard, boolean player) {
 	boolean result = false;
-	int length = gameBoard.length;
 	char checkChar;
 
 	if(player){
@@ -212,8 +199,8 @@ public class Aufgabe1 {
 	//LINE, COLUMN, DIAGONALE 1, Diagonale 2
 	int countL = 0, countC = 0, countD1 = 0, countD2 = 0;
 
-	for(int i = 0; i < length && !result; i = i + 1){
-	    for(int j = 0; j < length && !result; j = j + 1){
+	for(int i = 0; i < gameBoard.length && !result; i = i + 1){
+	    for(int j = 0; j < gameBoard[i].length && !result; j = j + 1){
 		if(gameBoard[i][j] == checkChar){
 		    countL = countL + 1;
 		}
@@ -236,7 +223,6 @@ public class Aufgabe1 {
 	    }
 	    
 	    if(countL == 3 || countC == 3 || countD1 == 3 || countD2 == 3){
-		System.out.println("Someone WON");
 		result = true;
 	    }
 	    
@@ -277,17 +263,3 @@ public class Aufgabe1 {
     }
 
 }
-
-	/*
-	  -> 1. Aufruf nach Player
-	  -> 1. Freies Feld wird mit O markiert
-	  -> Vor 1. Rekursiven Schritt geschaut ob dieser das Spiel gewinnt, Spielfeld voll ist oder depth-1 bereits 0 ist
-	  -> Ansonsten nächster Rekursive Schritt wird dann mit Player = true aufgerufen und depth-1
-	  -> Gleich wie oben
-	  ->Wenn eines eintrifft, Gewinn des Computers = 1
-	  ->Gewinn des Spielers = - 1
-	  ->Bei gewinn des Computers, bei Index 2 wird Angegeben: +1, und die Koordinaten des Feldes die zum Gewinn führen
-	  ->Ansonsten: -1, und Koordinaten zum verhindern sodas der Spieler gewinnt
-	  ->Wenn Spielfeld voll oder depth-1 = 0 dann wird 0 angegeben
-	  ->Dieses Ergebnis wird dann in Main genutzt
-	*/
